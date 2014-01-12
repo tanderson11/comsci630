@@ -1,14 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Ruby on Rails Tutorial Sample App | <%= yield(:title) %></title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag "application", media: "all",
+                                           "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
 <body>
+	<div id="container">
+		<div id="top">
+			<div class="image" id="background" align="center">
+			</div>	
+		</div>
+		<div id="bottom">
+			<div id="leftside">
+				<p class="righty">announcements</p>
+				<div id="announcements">	
+					Upcoming Techmasters meeting on Wednesday, January 14th at 1:30 pm. You'll find us in the room off the stairs on the second floor of Gelb.
+				</div>
+				<p class="righty">about the club</p>
+				<div id="about">
+					<p>Sample app.</p>
+				</div>
+				<p class="righty">tutorials</p>
+				<div id="tutorials">
+					
+						<a href="home.html" class="mainlink">Home</a><br />
+						
+						<button class="linkbutton">Ruby Tutorials</button>
+						<p class="linkie">
+							<a href="home.html" class="link">Home</a>
+						</p><br />
+						
+						<button class="linkbutton">HTML Tutorials</button>
+						<p class="linkie">
+							<a href="home.html" class="link">Home</a>
+						</p><br />
+						
+						<button class="linkbutton">Windows Vista Tutorials</button>
+						<p class="linkie">
+							<a href="home.html" class="link">Home</a>
+						</p><br />
 
-<%= yield %>
-
+				</div>
+			</div>
+			<div id="rightside">
+				<div id="rightcontent">
+					<%= yield %>
+				</div>
+			</div>
+		</div>		
+	</div>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 </body>
 </html>
