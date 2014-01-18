@@ -1,15 +1,26 @@
-<% provide(:title, 'Home') %>
-    <p>Hello and welcome to the Techmasters website, a place for technological tutorials and assistance. Feel free to check out our Techmasters forum, though you will need to be a member to post.</p>
-    <h1>Need computer help or have a printer problem?</h1>
-    FORM GOES HERE.
+<p>Hello and welcome to the Techmasters website, a place for technological tutorials and assistance. Feel free to check out our Techmasters forum, though you will need to be a member to post.</p>
+<h1>Need computer help or have a printer problem?</h1>
+FORM GOES HERE.
 
-    <p>CURRENT PROBLEMS WITH THE WEBSITE: CANNOT GET THE JAVASCRIPT TO WORK FOR THE LINKS. SEE THE APPLICATION HTML PAGE AND THE APPLICATION JS PAGE FOR A REDO. ASK MR. HUGON WHAT PROBLEMS COULD BE.</p>
-
-    <p>To Do</p>
-    <ul>
-    	<li>Fix Javascript for the link headers.</li>
-    	<li>Add user accounts</li>
-    	<li>Add email form that sends email to all who have user accounts</li>
-    	<li>Add forum where anyone can view but only members can post.</li>
-    	<li>If I have time, add a moderating feature for one specific user, aka me.</li>
+<p>To Do</p>
+<ul>
+    <li>Add user accounts</li>
+    <li>Add email form that sends email to all who have user accounts</li>
+    <li>Add forum where anyone can view but only members can post.</li>
+    <li>If I have time, add a moderating feature for one specific user, aka me.</li>
     </ul>
+
+This is a test for the rails linking system: 
+    <p><%= link_to "TEST LINK", '#', class: "btn btn-large btn-primary" %><br />
+    That link above is in preparation for ading users to the site in chapter seven. This create a stub link of the form <textarea><a href="#" class="btn btn-large btn-primary">Sign up now!</a></textarea>
+    </p>
+
+   <p>Problems for Mr. Hugon</p>
+   <ul>
+        <li>How do I make the status as a field in my table? Note: I have made my user model already. I figured it would be better to start without the field and add it later after I've gotten the first bit under my belt than try to do it now and screw up royally.</li>
+    </ul>
+
+    Stuff to finish chapter 5:
+    <li><%= link_to "Contact", contact_path %></li>
+
+    <li><%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %></li>

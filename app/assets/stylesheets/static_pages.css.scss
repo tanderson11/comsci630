@@ -164,12 +164,13 @@ p.linkie
 	display: none; 
 	text-align: left; 
 	padding-left: 20px;
-	margin-bottom: 0;
+	margin-bottom: 0px;
+	margin-top: 10px;
 }
 p.righty
 {
 	margin-left: 5px;
-	margin-bottom: 0;
+	margin-bottom: 0px;
 }
 
 b { color: #143b63; }
@@ -178,33 +179,32 @@ u { color: #143b63; }
 
 /*Accordion links!*/
 button {
-display: block; 
-width: 90%; 
-height: 25px; 
-line-height: 10px;
-background-color: #143b63; 
-color: #ffffff;
-font-size: 14px;
-font-family: cambria; 
-text-decoration: none; 
-text-align: center; 
-border: 1px solid #ffffff; 
--webkit-border-radius: 5px; 
--moz-border-radius: 5px; 
-border-radius: 5px; 
-box-shadow: 3px 3px 4px #2e7899; 
--moz-transition: background-color 0.3s, -moz-transform 0.3s; 
--webkit-transition: background-color 0.3s, -webkit-transform 0.3s; 
-transition: background-color 0.3s, transform 0.3s;
-margin-left: 15px;
-}
-button:hover
-{
-color: #ffffff; 
-background-color: #3c4957; 
-text-decoration: none; 
-border: 1px solid #ffffff; 
--moz-box-shadow: 3px 3px 4px #1f5066; 
--webkit-box-shadow: 3px 3px 4px #1f5066; 
-box-shadow: 3px 3px 4px #1f5066;
+	display: block; 
+	width: 90%; 
+	height: 25px; 
+	line-height: 10px;
+	background-color: #143b63; 
+	color: #ffffff;
+	font-size: 14px;
+	font-family: cambria; 
+	text-decoration: none; 
+	text-align: center; 
+	border: 1px solid #ffffff; 
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px; 
+	box-shadow: 3px 3px 4px #2e7899; 
+	-moz-transition: background-color 0.3s, -moz-transform 0.3s; 
+	-webkit-transition: background-color 0.3s, -webkit-transform 0.3s; 
+	transition: background-color 0.3s, transform 0.3s;
+	margin-left: 15px;
+	&:hover {
+		color: #ffffff; 
+		background-color: #3c4957; 
+		text-decoration: none; 
+		border: 1px solid #ffffff; 
+		-moz-box-shadow: 3px 3px 4px #1f5066; 
+		-webkit-box-shadow: 3px 3px 4px #1f5066; 
+		box-shadow: 3px 3px 4px #1f5066;
+	}
 }
