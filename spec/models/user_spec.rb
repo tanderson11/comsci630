@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe User do
 	before do
-		@user = User.new(first: "Example", last: "Example", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
+		@user = User.new(first: "Example", last: "Example", email: "user@andover.edu", password: "foobar", password_confirmation: "foobar")
   end
 
   	subject { @user }
@@ -11,10 +11,11 @@ describe User do
   	it { should respond_to(:last) }
   	it { should respond_to(:email) }  
   	it { should respond_to(:password_digest) }
-
+    it { should respond_to(:password) } 
+    it { should respond_to(:password_confirmation) }
+    it { should respond_to(:authenticate) }
 
   	it { should be_valid }
-  	it { should respond_to(:authenticate) }
 
 	describe "when name is not present" do
     	before { @user.first = " " }
@@ -48,7 +49,7 @@ describe User do
 
   	describe "when email format is valid" do
     	it "should be valid" do
-      	addresses = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
+      	addresses = %w[cwolford@andover.edu]
       	addresses.each do |valid_address|
         @user.email = valid_address
         expect(@user).to be_valid

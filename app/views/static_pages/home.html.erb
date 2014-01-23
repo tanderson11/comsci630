@@ -18,9 +18,15 @@ This is a test for the rails linking system:
    <p>Problems for Mr. Hugon</p>
    <ul>
         <li>How do I make the status as a field in my table? Note: I have made my user model already. I figured it would be better to start without the field and add it later after I've gotten the first bit under my belt than try to do it now and screw up royally.</li>
+        <li>Currently, the exec test is failing because I specified an andover.edu email address as per my decision for the project. You will find this in the user model to check for correct syntax. I am failing the test because I have users in my database who have different emails that are not andover ones. Here's the kicker though, they're failing EVEN THOUGH I DELETED THOSE USERS FROM MY DATABASE! They're still showing up in the memory, and that's screwing me over. The book even ackowledges that they're in the memory still, after you destroy them. Search memory on the chapter six page to find the part. How do I get them out of the memory so that I can pass the test?</li>
     </ul>
 
     Stuff to finish chapter 5:
     <li><%= link_to "Contact", contact_path %></li>
 
     <li><%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %></li>
+
+    <p>Progress on the Final Project</p>
+    <ul>
+        <li>Made controllers and models for users and orders.</li>
+    </ul>

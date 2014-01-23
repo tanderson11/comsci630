@@ -40,7 +40,10 @@
 	</div>
 	<div id="rightside">
 		<div id="rightcontent"
-			<%= yield %>
+		<% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      	<% end %>
+      	<%= yield %>
 		</div>
 	</div>
 </div>
