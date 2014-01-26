@@ -5,8 +5,23 @@
 <div id="bottom">
 	<div id="leftside">
 		<p class="righty">announcements</p>
-		<div id="announcements">	
-			Upcoming Techmasters meeting on Wednesday, January 14th at 1:30 pm. You'll find us in the room off the stairs on the second floor of Gelb.
+		<div id="announcements">
+		TESTER TIME!	
+			<% if signed_in? %>
+            <li><%= link_to "Users", '#' %></li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profile", current_user %></li>
+                <li><%= link_to "Settings", '#' %></li>
+                <li class="divider"></li>
+                <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+              </ul>
+            </li>
+        <% else %>
+            <li><%= link_to "Sign in", signin_path %></li>
+        <% end %>
+
 		</div>
 		<p class="righty">about the club</p>
 		<div id="about">
@@ -23,19 +38,16 @@
 						
 				<button class="linkbutton">Ruby Tutorials</button>
 				<p class="linkie">
-					<a href="home.html" class="link">Home</a>
+					You can put a link here.
 				</p><br />
 						
 				<button class="linkbutton">HTML Tutorials</button>
 				<p class="linkie">
-					<a href="home.html" class="link">Home</a>
 				</p><br />
 						
 				<button class="linkbutton">Windows Vista Tutorials</button>
 				<p class="linkie">
-					<a href="home.html" class="link">Home</a>
 				</p><br />
-
 		</div>
 	</div>
 	<div id="rightside">
