@@ -1,12 +1,13 @@
 class User < ActiveRecord::Base
 	attr_accessible :first, :last, :email, :password, :password_confirmation
 	has_secure_password
+
 	before_save { self.email = email.downcase }
   	before_create :create_remember_token
 
 	before_save { self.email = email.downcase }
 	validates :first, :last, presence: true, length: { maximum: 50 }
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[andover]+\.[edu]+\z/i
+	VALID_EMAIL_REGEX = /\A[\w+\-.]+@andover\.edu\z/i
 	validates :email, presence:   true,
                 	format:     { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
