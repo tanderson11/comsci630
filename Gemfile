@@ -6,6 +6,7 @@ gem 'rails', '4.0.2'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem "protected_attributes", :github => "rails/protected_attributes"
+gem "mail", "2.5.4"
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

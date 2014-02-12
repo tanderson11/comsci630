@@ -1,0 +1,15 @@
+<html>
+
+<h1>List of Techmaster Users</h1>
+
+<% User.techyes.each do |u| %>
+	<%= u.first %> <%= u.last %>
+<%end%><br />
+
+<h1>Everybody Else</h1>
+
+<% User.techno.each do |z| %>
+	<%= z.first %> <%= z.last %>
+<%end%>
+
+</html>

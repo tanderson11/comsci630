@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, only: [:edit, :update]
-    def show
+  before_action :signed_in_user, only: [:edit, :update, :destroy]
+  before_action :correct_user, only:[:edit, :update, :destroy]
+
+  def show
     @user = User.find(params[:id])
   end
 
@@ -12,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome to the Techmasters Website!"
       redirect_to @user
     else
       render 'new'
@@ -37,16 +39,25 @@ class UsersController < ApplicationController
   current_user = user
   end
 
+  def index
+    @users = User.all
+  end
+
   private
 
     def user_params
       params.require(:user).permit(:first, :last, :email, :password,
-                                   :password_confirmation) if params[:user]
+                                   :password_confirmation, :techmasters) if params[:user]
     end
 
     # Before filters
 
     def signed_in_user
       redirect_to signin_url, notice: "Please sign in." unless signed_in?
+    end
+
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to root_path unless current_user?(@user)
     end
 end
