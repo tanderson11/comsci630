@@ -4,7 +4,7 @@
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@order) do |f| %>
-    	<%= render 'shared/error_messages', :object =>form.object %>
+    	<%= render 'shared/error_messages', :object =>f.object %>
 
     	<%= f.label :issue %>
     	<%= f.text_field :issue %>
@@ -13,7 +13,7 @@
     	<%= f.text_field :description %>
 
     	<%= f.label :time, "Time You Are Available" %>
-    	<%= f.text_field :email %>
+    	<%= f.text_field :time %>
 
         <%= f.label :status %>
         <%= f.check_box :status %><br /><br />
