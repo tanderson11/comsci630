@@ -14,8 +14,9 @@ class User < ActiveRecord::Base
     validates :password, :password_confirmation, :presence=>true
 	validates :password, length: { minimum: 6 }
 
-	has_and_belongs_to_many :order
-	has_many :orders_users
+	has_many :orders # the ones created by this user
+	has_many :orders_users # join table entries for assignments
+	has_many :assignments, :through=>:orders_users, :class_name=>'Order', :source=>:order
 
 	scope :techyes, -> { where(techmasters: true) }
 	scope :techno, -> { where(techmasters: false) }

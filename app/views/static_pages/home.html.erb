@@ -1,33 +1,37 @@
 <p>Hello and welcome to the Techmasters website, a place for technological tutorials and assistance. Feel free to check out our Techmasters forum, though you will need to be a member to post.</p>
 <h1>Need computer help or have a printer problem?</h1>
-FORM GOES HERE.
 
-<p>To Do</p>
-<ul>
-    <li>Add user accounts</li>
-    <li>Add email form that sends email to all who have user accounts</li>
-    <li>Add forum where anyone can view but only members can post.</li>
-    <li>If I have time, add a moderating feature for one specific user, aka me.</li>
-    </ul>
+<center><%= link_to "Sign Up to Techmasters-Work!", signup_path, class: "btn btn-large btn-primary" %></center></ br>
 
-This is a test for the rails linking system: 
-    <p><%= link_to "TEST LINK", '#', class: "btn btn-large btn-primary" %><br />
-    That link above is in preparation for ading users to the site in chapter seven. This create a stub link of the form <textarea><a href="#" class="btn btn-large btn-primary">Sign up now!</a></textarea>
-    </p>
-
-   <p>Problems for Mr. Hugon</p>
+   <p>To Do</p>
    <ul>
-        <li>How do I make the status as a field in my table? Note: I have made my user model already. I figured it would be better to start without the field and add it later after I've gotten the first bit under my belt than try to do it now and screw up royally.</li>
-        <li>I need to set up creation of an order like I do with creation of a user. I need to make creating an order only doable by people who have created a user account, but that should be easy as I will make the link to the order creation page only accessible to those users who have logged in.</li>
-        <li>I also need to fix the obnoxious huge green success flash css.</li>
+        <li>Clean up the site</li>
+        <li>Make sure the orders are assigned to the user who made them.</li>
+        <li>Have an orders index where the orders are listed and have the user who made them LISTED.</li>
+        <li>Make it so that you can display the status of the orders on the orders index.</li>
+        <li>Design a controller method so that techmasters can assign themselves to the user.</li>
+        <li>There will be two types of assignments. The assignment of the creator user to the order and the assignment of the techmaster user to the order. The creator user can also be a techmaster user but you cannot solve your own order.</li>
+        <li>Edit the orders index to show the user who made them listed and the techmaster user assigned to them listed.</li>
+        <li>Make sure techmaster users have the ability to mark status of the users that they have.</li>
+        <li>Techmasters will need a personal view that lists the orders that they have and then the status of those orders with buttons for marking status.</li>
+        <li>The personal view should be the techmaster's profile page.</li>
     </ul>
 
-    Stuff to finish chapter 5:
-    <li><%= link_to "Contact", contact_path %></li>
-
-    <li><%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %></li>
-
-    <p>Progress on the Final Project</p>
+    <p>Do for version 2.0</p>
     <ul>
-        <li>Made controllers and models for users and orders.</li>
-    </ul>
+        <li>Techmaster user is allowed to write comments for the work orders they have.</li>
+
+
+
+
+creator
+assigner
+
+
+add field to the model- creator and assigner - db migrate (ONE FIELD: role. Defines relationship between order and the user.) CHECK
+fill field appropriately on creation of order (do in the create function of the orders join table)
+fill field appropariately when techmaster picks up request
+filter (show all techmasters/all regular users) - views
+
+
+scope that would filter who is the creator. write a scope that would look for all possible entries in join table, pick out one that says creator. Then for the one that says creator and do a .user at that point to find the user that is the creator. 

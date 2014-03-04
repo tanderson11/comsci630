@@ -3,13 +3,13 @@
 <h1>List of Techmaster Users</h1>
 
 <% User.techyes.each do |u| %>
-	<%= u.first %> <%= u.last %>
+	<%= u.first %> <%= u.last %> <%= u.id %>
 <%end%><br />
 
 <h1>Everybody Else</h1>
 
 <% User.techno.each do |z| %>
-	<%= z.first %> <%= z.last %>
+	<%= z.first %> <%= z.last %> <%= z.id %>
 <%end%>
 
 </html>

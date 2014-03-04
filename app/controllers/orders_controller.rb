@@ -2,14 +2,16 @@ class OrdersController < ApplicationController
 	
   	def new
     	@order = Order.new
+    	@user = User.find(params[:user_id])
   	end
 
   	def show
-    	@order = Order.find(params[:id])
+    	@order = Order.find(params[:id, :user_id])
   	end
 
 	def create
 	    @order = Order.new(order_params)
+	    @order.user = User.find(params[:user_id])
 	    if @order.save
 	    	User.techyes.each do |user|
 				UserMailer.work_order(@order, user).deliver
@@ -37,7 +39,8 @@ class OrdersController < ApplicationController
 	private
 
     def order_params
-      params.require(:order).permit(:issue, :description, :time, :status) if params[:order]
+      params.require(:order).permit(:issue, :description, :time, :status, :user) if params[:order]
+      params.require(:user).permid(:user_id) if params[:user]
     end
 
 end

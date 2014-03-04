@@ -1,9 +1,19 @@
 SampleApp::Application.routes.draw do
-  resources :users
+  resources :users do
+    resources :orders
+  end
   resources :orders
   resources :sessions, only: [:new, :create, :destroy] 
 
-  get "orders/new"
+  #resources users do resources orders means that creating a new order gives you the url user/userid/order/new.
+  #when you click submit, part of the params is the user id.
+  #join table will only be used for techmaster assignments.
+  #user id will be added to the order. That user is the creator. period.
+  #point directly from order: creator. Point through join table: assigner.
+  #order belongs to user (really the creator).
+  #also order has many and users through orders_user. These users are the assigners.
+  #creat method under orders: set order.user = User.find(params[:user_id])
+  #you will need to rename the association between the tehmaster user and the orders so that with regular users you do User.order and then with techmasters you do User.assigned_to_orders or something like that.
 
   root  'static_pages#home'
   match '/signup', to: 'users#new', via: 'get'
@@ -14,6 +24,8 @@ SampleApp::Application.routes.draw do
   match '/help',  to: 'static_pages#help',  via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
+
+  #Hello world.
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -5,7 +5,7 @@ ActionMailer::Base.smtp_settings = {
   :port                 => 587,
   :domain               => "student.andover.edu",
   :user_name            => "techmasterswork",
-  :password             => "happycrazy",
+  :password             => "happycrazy17-",
   :authentication       => "plain",
   :enable_starttls_auto => true
 }

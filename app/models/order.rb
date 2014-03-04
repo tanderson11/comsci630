@@ -4,6 +4,14 @@ class Order < ActiveRecord::Base
 	validates :description, presence: true
 	validates :time, presence: true
 
-	has_and_belongs_to_many :users
-	has_many :orders_users
+	belongs_to :user # creator
+	has_many :assignees, :through=>:orders_users, :class_name=>'User', :source=>:user
+
+	scope :roleyes, -> { where(role: "creator") }
+	scope :roleno, -> { where(role: "assigner") }
+
 end
+
+
+
+
