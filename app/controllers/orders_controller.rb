@@ -23,8 +23,6 @@ class OrdersController < ApplicationController
 	    end
 	end
 
-	#I have a feeling something is wrong with the mailer here or in the setup_mail.rb domain. Thoughts?
-
   	def edit
     	@order = Order.find(params[:id])
   	end
