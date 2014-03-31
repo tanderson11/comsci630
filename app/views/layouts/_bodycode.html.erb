@@ -4,28 +4,31 @@
 </div>
 <div id="bottom">
 	<div id="leftside">
-		<p class="righty">announcements</p>
+		<p class="righty">quicklinks</p>
 		<div id="announcements">
-		TESTER TIME!	
+		    <li><a href= "users" >Users</a></li>
+            <li><a href= "orders/new">Create a Work Order</a></li>
 			<% if signed_in? %>
-            <li><%= link_to "Users", '#' %></li>
             <li id="fat-menu" class="dropdown">
               <a href="users_path" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", '#' %></li>
+                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                 <li class="divider"></li>
                 <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
               </ul>
             </li>
         <% else %>
             <li><%= link_to "Sign in", signin_path %></li>
+            <li><%= link_to "Create a Work Order", new_order_path %></li> 
         <% end %>
 
 		</div>
 		<p class="righty">about the club</p>
 		<div id="about">
-		Techmasters is the on-campus technology group for Phillips Academy Andover. We were founded in 2005 by a dedicated group of students that wanted to bring Phillips Acadmy into the 21st century. This website currently functions as the main source of technology help.
+		Techmasters is the on-campus technology group for Phillips Academy Andover. We were founded in 2005 by a dedicated group of students that wanted to bring Phillips Acadmy into the 21st century. This website currently functions as the main source of technology help. If you have questions, please contact the following:</ br>
+		James Herman: jherman@andover.edu</ br>
+		Cliff Ressel: cressel@andover.edu
 		</div>
 		<p class="righty">tutorials</p>
 		<div id="tutorials">

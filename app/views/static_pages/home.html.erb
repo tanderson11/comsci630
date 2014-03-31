@@ -1,37 +1,8 @@
-<p>Hello and welcome to the Techmasters website, a place for technological tutorials and assistance. Feel free to check out our Techmasters forum, though you will need to be a member to post.</p>
-<h1>Need computer help or have a printer problem?</h1>
+<p>Hello and welcome to the Techmasters website, a place for technological tutorials and assistance. If you would like to place a work order, please follow the appropriate link on the sidebar.</p>
+<h1>For Techmasters on the Work Duty List</h1>
 
 <center><%= link_to "Sign Up to Techmasters-Work!", signup_path, class: "btn btn-large btn-primary" %></center></ br>
 
-   <p>To Do</p>
-   <ul>
-        <li>Clean up the site</li>
-        <li>Make sure the orders are assigned to the user who made them.</li>
-        <li>Have an orders index where the orders are listed and have the user who made them LISTED.</li>
-        <li>Make it so that you can display the status of the orders on the orders index.</li>
-        <li>Design a controller method so that techmasters can assign themselves to the user.</li>
-        <li>There will be two types of assignments. The assignment of the creator user to the order and the assignment of the techmaster user to the order. The creator user can also be a techmaster user but you cannot solve your own order.</li>
-        <li>Edit the orders index to show the user who made them listed and the techmaster user assigned to them listed.</li>
-        <li>Make sure techmaster users have the ability to mark status of the users that they have.</li>
-        <li>Techmasters will need a personal view that lists the orders that they have and then the status of those orders with buttons for marking status.</li>
-        <li>The personal view should be the techmaster's profile page.</li>
-    </ul>
-
-    <p>Do for version 2.0</p>
-    <ul>
-        <li>Techmaster user is allowed to write comments for the work orders they have.</li>
-
-
-
-
-creator
-assigner
-
-
-add field to the model- creator and assigner - db migrate (ONE FIELD: role. Defines relationship between order and the user.) CHECK
-fill field appropriately on creation of order (do in the create function of the orders join table)
-fill field appropariately when techmaster picks up request
-filter (show all techmasters/all regular users) - views
-
-
-scope that would filter who is the creator. write a scope that would look for all possible entries in join table, pick out one that says creator. Then for the one that says creator and do a .user at that point to find the user that is the creator. 
+Problems with the site: users page lists the users in an encrypted format, work order creation success is styled wronng (having trouble altering the bootstrap correctly), email system needs to email the contents of the work order to each user. </ br>
+Note that the current email is not emailing users (don't know why, it was working before but now it isn't). When it does, I want it to send a copy of the work order created in the work order form.</ br>
+The last thing is that I've been have a couple routing issues with the "users" link. I realized that it works if coming from the homepage but not from other pages. I don't know what to change to fix that. Thougths?

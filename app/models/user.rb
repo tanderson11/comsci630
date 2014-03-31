@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	attr_accessible :first, :last, :email, :password, :password_confirmation, :techmasters
+	attr_accessible :first, :last, :email, :password, :password_confirmation,
 	has_secure_password
 
 	before_save { self.email = email.downcase }
@@ -17,9 +17,6 @@ class User < ActiveRecord::Base
 	has_many :orders # the ones created by this user
 	has_many :orders_users # join table entries for assignments
 	has_many :assignments, :through=>:orders_users, :class_name=>'Order', :source=>:order
-
-	scope :techyes, -> { where(techmasters: true) }
-	scope :techno, -> { where(techmasters: false) }
 
 	def User.new_remember_token
 	    SecureRandom.urlsafe_base64
