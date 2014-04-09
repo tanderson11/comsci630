@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to the Techmasters Website!"
-      redirect_to @user
+      redirect_to user_path (@user)
     else
       render 'new'
     end
