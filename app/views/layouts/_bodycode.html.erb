@@ -6,11 +6,11 @@
 	<div id="leftside">
 		<p class="righty">quicklinks</p>
 		<div id="announcements">
-		    <li><a href= "users" >Users</a></li>
-            <li><a href= "orders/new">Create a Work Order</a></li>
+		    <li><a href= "/users" >Users</a></li>
+            <li><a href= "/orders/new">Create a Work Order</a></li>
 			<% if signed_in? %>
             <li id="fat-menu" class="dropdown">
-              <a href="users_path" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+              <a href="/users_path" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Profile", current_user %></li>
                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>
@@ -33,7 +33,7 @@
 		<p class="righty">tutorials</p>
 		<div id="tutorials">
 					
-				<a href="home.html" class="mainlink">Home</a><br />
+				<a href="/home.html" class="mainlink">Home</a><br />
 						
 				<button class="linkbutton">Ruby Tutorials</button>
 				<p class="linkie">
